@@ -3,6 +3,7 @@ using Tryitter.Interfaces.Repository;
 using Tryitter.Interfaces.Services;
 using Tryitter.Models;
 using Tryitter.src.Dto;
+using Tryitter.src.Entities;
 using Tryitter.src.Exceptions;
 using Tryitter.src.Interfaces.Services;
 
@@ -19,7 +20,7 @@ namespace Tryitter.src.Services
             _tokenService = tokenService;
         }
 
-        public async Task<object> Create(CreateStudentRequestDto request)
+        public async Task<StudentAuthenticatedOutput> Create(CreateStudentRequestDto request)
         {
             var studentExists = await _studentRepository.ReadByEmail(request.Email);
             if (studentExists is not null) throw new ConflictException("Student is already registered");
@@ -37,10 +38,10 @@ namespace Tryitter.src.Services
             var newStudent = await _studentRepository.Create(student);
             var token = _tokenService.GenerateToken(student);
 
-            return new { newStudent, token };
+            return new StudentAuthenticatedOutput(){ Student = newStudent, Token = token };
         }
 
-        public async Task<object> Authenticate(AuthorizeRequestDto request)
+        public async Task<StudentAuthenticatedOutput> Authenticate(AuthorizeRequestDto request)
         {
             var student = await _studentRepository.ReadByEmail(request.Email);
             if (student is null) throw new NotFoundException("Student does not exists");
@@ -49,7 +50,7 @@ namespace Tryitter.src.Services
             if (!credentialsMatch) throw new UnauthorizedException("Credentials does not match");
 
             var token = _tokenService.GenerateToken(student);
-            return new { student, token };
+            return new StudentAuthenticatedOutput() { Student = student, Token = token };
         }
 
 

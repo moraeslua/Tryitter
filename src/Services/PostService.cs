@@ -49,13 +49,6 @@ namespace Tryitter.src.Services
             return post;
         }
 
-        public async Task<Post> ReadStudentLastPostAsync(Guid studentId)
-        {
-            await _studentService.ReadById(studentId);
-            var post = await _postRepository.ReadLastOne(studentId);
-            return post;
-        }
-
         public async Task<Post> Update(Guid id, UpdatePostRequestDto request)
         {
             var previousPost = await ReadOne(id);

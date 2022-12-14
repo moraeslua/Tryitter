@@ -32,23 +32,6 @@ namespace Tryitter.Controllers
             return Ok(post);
         }
 
-        [HttpGet("student/latest")]
-        [Authorize]
-        public async Task<IActionResult> GetStudentLastPostAsync()
-        {
-            var payload = Request.GetAuthenticationPayload();
-            var post = await _postService.ReadStudentLastPostAsync(payload.StudentId);
-            return Ok(post);
-        }
-
-        [HttpGet("another-student/latest")]
-        [Authorize]
-        public async Task<IActionResult> GetAnotherStudentLastPostAsync(Guid id)
-        {
-            var post = await _postService.ReadStudentLastPostAsync(id);
-            return Ok(post);
-        }
-
         [HttpGet]
         public async Task<IActionResult> GetAllAsync()
         {

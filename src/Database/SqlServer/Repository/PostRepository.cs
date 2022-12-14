@@ -32,12 +32,6 @@ namespace Tryitter.Repository
             return await _context.Posts.AsNoTracking().ToListAsync();
         }
 
-        public async Task<Post> ReadLastOne(Guid userId)
-        {
-            var lastPost = await _context.Posts.Where(x => x.StudentId == userId).FirstAsync();
-            return lastPost!;
-        }
-
         public async Task<Post> ReadOne(Guid id)
         {
             var post = await _context.Posts.FindAsync(id);

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Tryitter.Dto;
 using Tryitter.Helpers;
 using Tryitter.src.Dto;
+using Tryitter.src.Entities;
 using Tryitter.src.Interfaces.Services;
 
 namespace Tryitter.Controllers
@@ -20,7 +21,7 @@ namespace Tryitter.Controllers
         [HttpPost]
         [Route("register")]
         [AllowAnonymous]
-        public async Task<ActionResult<dynamic>> RegisterAsync([FromBody] CreateStudentRequestDto request)
+        public async Task<ActionResult<StudentAuthenticatedOutput>> RegisterAsync([FromBody] CreateStudentRequestDto request)
         {
             var result = await _studentService.Create(request);
             return Ok(result);
@@ -29,7 +30,7 @@ namespace Tryitter.Controllers
         [HttpPost]
         [Route("login")]
         [AllowAnonymous]
-        public async Task<ActionResult<dynamic>> Authenticate([FromBody] AuthorizeRequestDto request)
+        public async Task<ActionResult<StudentAuthenticatedOutput>> Authenticate([FromBody] AuthorizeRequestDto request)
         {
             var result = await _studentService.Authenticate(request);
             return Ok(result);
