@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tryitter", "Tryitter.csproj", "{73F976B0-6A50-4E5B-9801-8EA06EE142D8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tryitter.Test", "..\..\Tryitter.Test\Tryitter.Test.csproj", "{EE1F0ABA-1269-4F94-A80C-22C7E49A1218}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tryitter.Test", "..\Tryitter.Test\Tryitter.Test.csproj", "{E9B22D7E-C4ED-4D68-AC76-BCDCF8AB294D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{73F976B0-6A50-4E5B-9801-8EA06EE142D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73F976B0-6A50-4E5B-9801-8EA06EE142D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73F976B0-6A50-4E5B-9801-8EA06EE142D8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EE1F0ABA-1269-4F94-A80C-22C7E49A1218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EE1F0ABA-1269-4F94-A80C-22C7E49A1218}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EE1F0ABA-1269-4F94-A80C-22C7E49A1218}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EE1F0ABA-1269-4F94-A80C-22C7E49A1218}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9B22D7E-C4ED-4D68-AC76-BCDCF8AB294D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9B22D7E-C4ED-4D68-AC76-BCDCF8AB294D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9B22D7E-C4ED-4D68-AC76-BCDCF8AB294D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9B22D7E-C4ED-4D68-AC76-BCDCF8AB294D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
