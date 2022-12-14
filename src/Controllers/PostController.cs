@@ -37,7 +37,7 @@ namespace Tryitter.Controllers
         public async Task<IActionResult> GetStudentLastPostAsync()
         {
             var payload = Request.GetAuthenticationPayload();
-            var post = await _postService.ReadStudentLastPostAsync(payload.UserId);
+            var post = await _postService.ReadStudentLastPostAsync(payload.StudentId);
             return Ok(post);
         }
 

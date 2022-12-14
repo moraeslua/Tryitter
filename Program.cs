@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
-using Tryitter;
 using Tryitter.Interfaces.Repository;
 using Tryitter.Interfaces.Services;
 using Tryitter.Repository;
@@ -17,7 +16,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
-var key = Encoding.ASCII.GetBytes(Settings.JwtSecret);
+var key = Encoding.ASCII.GetBytes(builder.Configuration["JwtSecret"]);
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -36,7 +35,7 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<ITokenService, JwtTokenService>();
 builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();

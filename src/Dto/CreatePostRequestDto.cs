@@ -2,7 +2,7 @@
 {
     public class CreatePostRequestDto
     {
-        public Guid UserId { get; set; }
+        public Guid StudentId { get; set; }
 
         public string Text { get; set; } = string.Empty;
 

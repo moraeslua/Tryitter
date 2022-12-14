@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Tryitter.Dto;
 using Tryitter.Helpers;
-using Tryitter.Interfaces.Services;
 using Tryitter.src.Dto;
 using Tryitter.src.Interfaces.Services;
 
@@ -13,11 +12,9 @@ namespace Tryitter.Controllers
     public class StudentController : Controller
     {
         public IStudentService _studentService { get; private set; }
-        public ITokenService _tokenService { get; private set; }
-        public StudentController(IStudentService studentService, ITokenService tokenService)
+        public StudentController(IStudentService studentService)
         {
             _studentService = studentService;
-            _tokenService = tokenService;
         }
 
         [HttpPost]
@@ -47,7 +44,7 @@ namespace Tryitter.Controllers
         public async Task<IActionResult> GetAsync(Guid id)
         {
             var payload = Request.GetAuthenticationPayload();
-            var student = await _studentService.ReadById(payload.UserId);
+            var student = await _studentService.ReadById(payload.StudentId);
             return Ok(student);
         }
 
@@ -63,7 +60,7 @@ namespace Tryitter.Controllers
         public async Task<IActionResult> UpdateAsync([FromBody] UpdateStudentRequestDto request)
         {
             var payload = Request.GetAuthenticationPayload();
-            var studentUpdated = await _studentService.Update(payload.UserId, request);
+            var studentUpdated = await _studentService.Update(payload.StudentId, request);
             return Ok(studentUpdated);
         }
 
@@ -72,7 +69,7 @@ namespace Tryitter.Controllers
         public async Task<IActionResult> DeleteAsync(Guid id)
         {
             var payload = Request.GetAuthenticationPayload();
-            await _studentService.Delete(payload.UserId);
+            await _studentService.Delete(payload.StudentId);
             return Ok();
         }
     }

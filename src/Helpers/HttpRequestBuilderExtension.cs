@@ -1,4 +1,5 @@
 ﻿using System.Security.Claims;
+using Tryitter.src.Entities;
 
 namespace Tryitter.Helpers
 {
@@ -9,10 +10,10 @@ namespace Tryitter.Helpers
             var identitdy = request.HttpContext.User.Identity as ClaimsIdentity;
             if (identitdy is not null)
             {
-                var userId = identitdy.FindFirst("UserId")?.Value;
+                var StudentId = identitdy.FindFirst("StudentId")?.Value;
                 var email = identitdy.FindFirst(ClaimTypes.Email)?.Value;
 
-                return new AuthenticationPayload() { UserId = new Guid(userId!), Email = email! };
+                return new AuthenticationPayload() { StudentId = new Guid(StudentId!), Email = email! };
             }
             return new AuthenticationPayload();
         }

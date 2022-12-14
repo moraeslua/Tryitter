@@ -21,7 +21,7 @@ namespace Tryitter.src.Services
             var post = new Post()
             {
                 Id = Guid.NewGuid(),
-                UserId = request.UserId,
+                StudentId = request.StudentId,
                 ImageUrl = request.ImageUrl,
                 Text = request.Text,
             };
@@ -49,10 +49,10 @@ namespace Tryitter.src.Services
             return post;
         }
 
-        public async Task<Post> ReadStudentLastPostAsync(Guid userId)
+        public async Task<Post> ReadStudentLastPostAsync(Guid studentId)
         {
-            await _studentService.ReadById(userId);
-            var post = await _postRepository.ReadLastOne(userId);
+            await _studentService.ReadById(studentId);
+            var post = await _postRepository.ReadLastOne(studentId);
             return post;
         }
 
@@ -63,7 +63,7 @@ namespace Tryitter.src.Services
             var postToUpdate = new Post()
             {
                 Id = previousPost.Id,
-                UserId = previousPost.UserId,
+                StudentId = previousPost.StudentId,
                 ImageUrl = request.ImageUrl,
                 Text = request.Text
             };
@@ -72,10 +72,10 @@ namespace Tryitter.src.Services
             return updated;
         }
 
-        public async Task<List<Post>> ReadStudentAllPosts(Guid userId)
+        public async Task<List<Post>> ReadStudentAllPosts(Guid studentId)
         {
-            await _studentService.ReadById(userId);
-            var posts = await _postRepository.ReadStudentAllPosts(userId);
+            await _studentService.ReadById(studentId);
+            var posts = await _postRepository.ReadStudentAllPosts(studentId);
             return posts;
         }
     }

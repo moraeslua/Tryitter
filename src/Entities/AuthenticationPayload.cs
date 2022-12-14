@@ -1,8 +1,8 @@
-﻿namespace Tryitter
+﻿namespace Tryitter.src.Entities
 {
     public class AuthenticationPayload
     {
-        public Guid UserId { get; set; }
+        public Guid StudentId { get; set; }
         public string Email { get; set; } = string.Empty;
     }
 }

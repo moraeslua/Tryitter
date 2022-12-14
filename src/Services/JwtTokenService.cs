@@ -7,17 +7,27 @@ using Tryitter.Models;
 
 namespace Tryitter.Services
 {
-    public class TokenService : ITokenService
+    public class JwtTokenService : ITokenService
     {
+        private readonly IConfiguration _config;
+
+        public JwtTokenService(IConfiguration config)
+        {
+            _config = config;
+        }
+
         public string GenerateToken(Student student)
         {
+            var secret = _config["JwtSecret"]!;
+            
             var tokenHandler = new JwtSecurityTokenHandler();
-            byte[] key = Encoding.ASCII.GetBytes(Settings.JwtSecret);
+            byte[] key = Encoding.ASCII.GetBytes(secret);
+            
             var tokenDescriptor = new SecurityTokenDescriptor()
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                new Claim("UserId", student.Id.ToString()),
+                new Claim("StudentId", student.Id.ToString()),
                 new Claim(ClaimTypes.Email, student.Email),
             }),
                 Expires = DateTime.UtcNow.AddHours(2),

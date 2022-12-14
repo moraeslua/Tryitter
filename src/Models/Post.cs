@@ -11,7 +11,7 @@ namespace Tryitter.Models
 
         [Required]
         [ForeignKey("Student")]
-        public Guid UserId { get; set; }
+        public Guid StudentId { get; set; }
 
         [Required]
         [MaxLength(300)]

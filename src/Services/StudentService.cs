@@ -1,5 +1,4 @@
-﻿using Azure.Core;
-using Tryitter.Dto;
+﻿using Tryitter.Dto;
 using Tryitter.Interfaces.Repository;
 using Tryitter.Interfaces.Services;
 using Tryitter.Models;
@@ -31,7 +30,8 @@ namespace Tryitter.src.Services
                 Email = request.Email,
                 FullName = request.FullName,
                 Module = request.Module,
-                Status = request.Status
+                Status = request.Status,
+                Password = request.Password,
             };
 
             var newStudent = await _studentRepository.Create(student);
