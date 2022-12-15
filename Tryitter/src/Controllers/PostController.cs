@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Tryitter.Helpers;
 using Tryitter.src.Dto;
 using Tryitter.src.Interfaces.Services;
 

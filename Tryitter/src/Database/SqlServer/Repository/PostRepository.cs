@@ -22,8 +22,8 @@ namespace Tryitter.Repository
 
         public async Task Delete(Guid id)
         {
-            var post = _context.Posts.FindAsync(id);
-            _context.Remove(post);
+            var post = await _context.Posts.FindAsync(id);
+            _context.Posts.Remove(post!);
             await _context.SaveChangesAsync();
         }
 
