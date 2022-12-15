@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\morae\\Documents\\cs-studies\\projetos\\Tryitter.Test\\Tryitter.Test.csproj": {}
+    "C:\\Users\\morae\\Documents\\cs-studies\\projetos\\novorepo2\\Tryitter.Test\\Tryitter.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\morae\\Documents\\cs-studies\\projetos\\Tryitter.Test\\Tryitter.Test.csproj": {
+    "C:\\Users\\morae\\Documents\\cs-studies\\projetos\\novorepo2\\Tryitter.Test\\Tryitter.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\morae\\Documents\\cs-studies\\projetos\\Tryitter.Test\\Tryitter.Test.csproj",
+        "projectUniqueName": "C:\\Users\\morae\\Documents\\cs-studies\\projetos\\novorepo2\\Tryitter.Test\\Tryitter.Test.csproj",
         "projectName": "Tryitter.Test",
-        "projectPath": "C:\\Users\\morae\\Documents\\cs-studies\\projetos\\Tryitter.Test\\Tryitter.Test.csproj",
+        "projectPath": "C:\\Users\\morae\\Documents\\cs-studies\\projetos\\novorepo2\\Tryitter.Test\\Tryitter.Test.csproj",
         "packagesPath": "C:\\Users\\morae\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\morae\\Documents\\cs-studies\\projetos\\Tryitter.Test\\obj\\",
+        "outputPath": "C:\\Users\\morae\\Documents\\cs-studies\\projetos\\novorepo2\\Tryitter.Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\morae\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\morae\\Documents\\cs-studies\\projetos\\Tryitter\\Tryitter.csproj": {
-                "projectPath": "C:\\Users\\morae\\Documents\\cs-studies\\projetos\\Tryitter\\Tryitter.csproj"
+              "C:\\Users\\morae\\Documents\\cs-studies\\projetos\\novorepo2\\Tryitter\\Tryitter.csproj": {
+                "projectPath": "C:\\Users\\morae\\Documents\\cs-studies\\projetos\\novorepo2\\Tryitter\\Tryitter.csproj"
               }
             }
           }
@@ -48,13 +48,21 @@
               "target": "Package",
               "version": "[6.1.0, )"
             },
+            "Gwtdo": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.1.0, )"
             },
-            "Moq": {
+            "Moq.AutoMock": {
               "target": "Package",
-              "version": "[4.18.3, )"
+              "version": "[3.4.0, )"
+            },
+            "NBuilder": {
+              "target": "Package",
+              "version": "[6.1.0, )"
             },
             "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -93,14 +101,14 @@
         }
       }
     },
-    "C:\\Users\\morae\\Documents\\cs-studies\\projetos\\Tryitter\\Tryitter.csproj": {
+    "C:\\Users\\morae\\Documents\\cs-studies\\projetos\\novorepo2\\Tryitter\\Tryitter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\morae\\Documents\\cs-studies\\projetos\\Tryitter\\Tryitter.csproj",
+        "projectUniqueName": "C:\\Users\\morae\\Documents\\cs-studies\\projetos\\novorepo2\\Tryitter\\Tryitter.csproj",
         "projectName": "Tryitter",
-        "projectPath": "C:\\Users\\morae\\Documents\\cs-studies\\projetos\\Tryitter\\Tryitter.csproj",
+        "projectPath": "C:\\Users\\morae\\Documents\\cs-studies\\projetos\\novorepo2\\Tryitter\\Tryitter.csproj",
         "packagesPath": "C:\\Users\\morae\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\morae\\Documents\\cs-studies\\projetos\\Tryitter\\obj\\",
+        "outputPath": "C:\\Users\\morae\\Documents\\cs-studies\\projetos\\novorepo2\\Tryitter\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\morae\\AppData\\Roaming\\NuGet\\NuGet.Config",
