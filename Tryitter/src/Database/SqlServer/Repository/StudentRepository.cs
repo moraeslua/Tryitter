@@ -19,7 +19,7 @@ namespace Tryitter.Repository
             return student;
         }
 
-        public async void Delete(Guid id)
+        public async Task Delete(Guid id)
         {
             var student = await _context.Students.FindAsync(id);
             _context.Students.Remove(student!);

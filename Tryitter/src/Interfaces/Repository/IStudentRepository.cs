@@ -9,6 +9,6 @@ namespace Tryitter.Interfaces.Repository
         Task<Student> ReadByEmail(string email);
         Task<List<Student>> ReadAll();
         Task<Student> Update(Student student);
-        void Delete(Guid id);
+        Task Delete(Guid id);
     }
 }
