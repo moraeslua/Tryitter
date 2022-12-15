@@ -57,7 +57,7 @@ namespace Tryitter.src.Services
         public async Task Delete(Guid id)
         {
             await ReadById(id);
-            _studentRepository.Delete(id);
+            await _studentRepository.Delete(id);
         }
 
         public async Task<List<Student>> ReadAll()
